@@ -1,4 +1,11 @@
+# python tools
 .ipynb_checkpoints/
 .mypy_cache/
 .virtual_documents/
+__pycache__/
+# IDE
+.vscode/
+# vi temp files
+*.swp
+*.swo
 
