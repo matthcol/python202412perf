@@ -41,11 +41,22 @@ def play_with_specialized_points():
         print('\t- str:', p)
         print('\t- coords:', p.x, p.y)
         print('\t- distance from A:', p.distance(p_a))
+        print('\t- call dummy:')
+        p.dummy()
+        print()
+
 
     print('MRO class Point:', Point.mro())
     print('MRO class WeightedPoint:', WeightedPoint.mro())
     print('MRO class ColoredPoint:', ColoredPoint.mro())
     print('MRO class ColoredWeightedPoint:', ColoredWeightedPoint.mro())
+
+    print()
+    cwp_d.dummy()
+    print()
+    cwp_d.dummy_c()
+    print()
+    cwp_d.dummy_w()
 
 if __name__ == '__main__':
     play_with_points()

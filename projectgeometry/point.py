@@ -13,3 +13,6 @@ class Point(Form):
     def translate(self, delta_x, delta_y):
         self.x += delta_x
         self.y += delta_y
+
+    def dummy(self):
+        print(f'Dummy point (in real life: {type(self)})')
