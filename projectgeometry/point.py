@@ -9,3 +9,7 @@ class Point(Form):
 
     def distance(self, other: 'Point') -> float:
         return math.hypot(self.x - other.x, self.y - other.y)
+    
+    def translate(self, delta_x, delta_y):
+        self.x += delta_x
+        self.y += delta_y
