@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import override
 
 from coloredpoint import ColoredPoint
 from weightedpoint import WeightedPoint
@@ -6,8 +7,8 @@ from weightedpoint import WeightedPoint
 
 @dataclass
 class ColoredWeightedPoint(ColoredPoint, WeightedPoint):
-    pass
 
+    @override
     def dummy(self):
         super().dummy()
         print(f'Dummy colored weighted point (in real life: {type(self)})')

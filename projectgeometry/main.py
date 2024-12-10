@@ -58,6 +58,16 @@ def play_with_specialized_points():
     print()
     cwp_d.dummy_w()
 
+    print()
+    p1 = Point.from_coordinates([12.5, 23.4])
+    p2 = WeightedPoint.from_coordinates((13.5, 12.5))
+    coords = 45.6, 67.8
+    p3 = ColoredWeightedPoint.from_coordinates(coords)
+    _ = ColoredPoint.from_coordinates((3.4,))
+    print(p1)
+    print(p2)
+    print(p3)
+
 if __name__ == '__main__':
     play_with_points()
     print()

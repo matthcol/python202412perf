@@ -31,3 +31,25 @@ def test_translate(point_a):
     point_a.translate(1.25, -2.5)
     assert 5.5 == point_a.x
     assert 10.0 == point_a.y
+
+
+@pytest.mark.parametrize(
+        "sequence",
+        [
+            (),
+            (2.5,),
+            (2.5, 4.5, 7.5),
+        ],
+        ids=[
+            "empty sequence",
+            "sequence size 1",
+            "sequence size 3",
+        ]
+)
+def test_from_coordinates_ko(sequence):
+    with pytest.raises(ValueError) as ex_info:
+        # auto: ex_info.__enter__()
+        _ = Point.from_coordinates(sequence)
+        # auto: ex_info.__exit__()
+    assert "need 2 coordinates exactly" == str(ex_info.value) 
+    # NB: ex_info is a wrapper, ex_info.value contains the captured exception (ValueError)
