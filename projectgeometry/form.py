@@ -2,11 +2,11 @@
 # file form.py: module form
 
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass
 class Form(ABC):
-    name: str
+    name: str = field(compare=False) # name is ignored with ==, !=, <, <=, >=, >
 
     @abstractmethod
     def translate(self, delta_x: float, delta_y: float) -> None:

@@ -39,6 +39,8 @@ def play_with_specialized_points():
     for p in points:
         print('*', p.name)
         print('\t- str:', p)
+        print('\t- repr:', repr(p))
+        print(f'\t- repr: {p!r}')
         print('\t- coords:', p.x, p.y)
         print('\t- distance from A:', p.distance(p_a))
         print('\t- call dummy:')
@@ -63,7 +65,7 @@ def play_with_specialized_points():
     p2 = WeightedPoint.from_coordinates((13.5, 12.5))
     coords = 45.6, 67.8
     p3 = ColoredWeightedPoint.from_coordinates(coords)
-    _ = ColoredPoint.from_coordinates((3.4,))
+    # _ = ColoredPoint.from_coordinates((3.4,))
     print(p1)
     print(p2)
     print(p3)

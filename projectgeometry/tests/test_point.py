@@ -1,3 +1,4 @@
+from copy import copy
 import pytest
 from point import Point
 
@@ -53,3 +54,32 @@ def test_from_coordinates_ko(sequence):
         # auto: ex_info.__exit__()
     assert "need 2 coordinates exactly" == str(ex_info.value) 
     # NB: ex_info is a wrapper, ex_info.value contains the captured exception (ValueError)
+
+
+def test_eq_same(point_a):
+    assert point_a == point_a
+
+def test_eq_copy(point_a):
+    point_a_copy = copy(point_a)
+    # assert point_a_copy is not point_a # we have 2 different objects in memory
+    assert point_a == point_a_copy
+
+def test_eq_same_coords_different_name(point_a):
+    point_b = Point('b', point_a.x, point_a.y)
+    assert point_a == point_b
+
+# ("A", 4.25, 12.5)
+@pytest.mark.parametrize(
+     "name, x, y",
+     [
+         ('A', 1.0, 12.5),
+         ('A', 4.25, -1.0),
+         ('A', 1.0, -1.0),
+         ('B', 1.0, 12.5),
+         ('B', 4.25, -1.0),
+         ('B', 1.0, -1.0),
+     ]   
+)
+def test_eq_ko(point_a, name, x, y):
+    point_b = Point(name, x, y)
+    assert not (point_a == point_b)
