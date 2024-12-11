@@ -1,9 +1,9 @@
 from collections.abc import Iterable, Sized
 from dataclasses import dataclass, field
 from typing import Iterator, override
-from form import Form
-from mesurable2d import Mesurable2D
-from point import Point
+from geo.model.form import Form
+from geo.model.mesurable2d import Mesurable2D
+from geo.model.point import Point
 
 @dataclass
 class Polygon(Form, Mesurable2D, Iterable, Sized):

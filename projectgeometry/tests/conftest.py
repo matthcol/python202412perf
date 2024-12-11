@@ -1,5 +1,5 @@
 import pytest
-from point import Point
+from geo import Point
 
 
 @pytest.fixture

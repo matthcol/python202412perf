@@ -1,6 +1,6 @@
 from copy import copy
 import pytest
-from point import Point
+from geo import Point
 
 def test_distance():
     pA = Point('A', 1.2, 4.5)

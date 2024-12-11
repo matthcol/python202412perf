@@ -3,7 +3,9 @@ import math
 import typing
 from typing import Self, override
 from collections import abc
-from form import Form
+
+from geo.model.form import Form
+#from .form import Form
 
 @dataclass(order=True)
 class Point(Form):

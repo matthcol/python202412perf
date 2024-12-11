@@ -1,9 +1,6 @@
 
-from coloredpoint import ColoredPoint
-from form import Form
-from point import Point
-from weightedpoint import WeightedPoint
-from coloredweightedpoint import  ColoredWeightedPoint
+# from geo import Point, ColoredPoint
+from geo import *
 
 
 def play_with_points():

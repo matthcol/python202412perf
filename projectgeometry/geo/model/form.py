@@ -1,5 +1,5 @@
 
-# file form.py: module form
+# file form.py: module geo.model.form
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field

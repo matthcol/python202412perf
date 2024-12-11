@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import override
-from point import Point
+from geo.model.point import Point
 
 @dataclass
 class WeightedPoint(Point):

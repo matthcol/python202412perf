@@ -1,5 +1,4 @@
-from point import Point
-from weightedpoint import WeightedPoint
+from geo import Point, WeightedPoint
 
 
 p = Point(name='F', x=0.0, y=7.0)

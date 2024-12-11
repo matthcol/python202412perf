@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import override
 
-from coloredpoint import ColoredPoint
-from weightedpoint import WeightedPoint
+from geo.model.coloredpoint import ColoredPoint
+from geo.model.weightedpoint import WeightedPoint
 
 
 @dataclass
