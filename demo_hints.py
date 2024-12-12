@@ -1,4 +1,4 @@
-from typing import Literal, Sequence, cast
+from typing import Callable, Iterable, Literal, Sequence, cast
 
 
 numbers: list[int|float]
@@ -76,3 +76,17 @@ objects = [1, 2.0, 3, 'toto']
 n0 = cast(int, objects[0]) # n0 is considered as int
 n1 = cast(int, objects[3])
 print(n0, n1)
+
+# Function types
+def mymap(f: Callable[[int], int], iterable: Iterable[int], offset: int) -> Iterable[int]:
+    return map(lambda x: f(x) + offset, iterable)
+
+# ok
+results: list[int] = list(mymap(lambda x: x**2+1, range(10), 3))
+print(results)
+
+# ko
+mymap(lambda x,y: (x+y)**2+1, range(10), -1)
+
+
+#f2: Callable[..., None]
